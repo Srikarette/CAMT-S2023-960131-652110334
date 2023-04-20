@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0px;
+        }
+        .header{
+            width: 100%;
+            height: 90px;
+            background-color: orange;
+            position: relative;
+        }
+        .container{
+            height: 100%;      
+            width: 100%;
+            padding: 0px; 
+            margin: 0px 0px 0px 0px;      
+            /* border: 1px dashed black;      */
+            /* background-color: rgb(196, 196, 196);  */
+        }
+        .image-container{
+            height: 60%;      
+            width: 90%;
+            padding: 10px 0px 0px 0px; 
+            margin: 10px auto;      
+            /* border: 1px dashed black;      */
+            background-color: white; 
+        }
+        .text-container{
+            height: 30%;      
+            width: 90%;
+            margin: 10px auto;      
+            /* border: 1px dashed black;      */
+            background-color: white; 
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .nav-bar-logo img{
+            position: absolute;
+            margin: 0px 0px 0px 25px;
+            bottom: 5px;
+            -webkit-touch-callout: none;
+            
+        }
+        .nav-bar{
+            position: absolute;
+            right: 0;
+        }
+
+        .nav-bar ul li {
+            display:inline;
+            padding-right: 20px;
+        }
+        .title {
+            display: inline-flex;
+            align-items: center;
+            padding-left: 43%;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .scroll-top-button{
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .display-card{
+            width: 350px;
+            height: 400px;
+            margin: 0px 0px 20px 22px;
+            padding: 0px 0px 0px 0px;
+            border: 1px solid black;
+            background-color: white;
+            display: inline-block;
+            transition: 0.1s;
+            cursor: pointer;
+        }
+        .display-card:hover{
+            filter: drop-shadow(3px 7px 3px rgb(182, 182, 182));
+        }
+        .display-card img{
+            height: 100%;      
+            width: 100%;
+            pointer-events: none;
+            -webkit-touch-callout: none;
+        }
+      
+    </style>
+
+    <title>Lazada Clone</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <div class="nav-bar-logo"><img style="width: 150px; height: auto;" src="img/LazadaLogo.png"></div>
+            <div class="nav-bar">
+                <ul style="text-decoration: none; list-style-type: none;">
+                    <li><a href="https://www.lazada.co.th/">SAVE MORE ON APP</a></li>
+                    <li><a href="https://pages.lazada.co.th/wow/i/th/sell-on-lazada/sell?spm=a2o4m.home.header.d2.11257f6dnkWsID&hybrid=1">SELL ON LAZADA</a></li>
+                    <li><a href="https://www.lazada.co.th/helpcenter/?spm=a2o4m.home.header.6.11257f6daPplw6">CUSTOMER CARE</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">TRACK MY ORDER</a></li>
+                    <li><button style="height: 50px; width: 50px; border-radius: 50%; border: none; cursor: pointer;">Login</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="title">
+            <img style="padding-right: 20px;" src="img/HeartLogo-removebg-preview.png" alt="lLogo" width="40px" height="40px" >
+            <h1>Just for you</h1>
+            <img style="padding-left: 20px;" src="img/HeartLogo-removebg-preview.png" alt="lLogo" width="40px" height="40px" >
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="item-list">
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <div class="display-card">
+                    <div class="image-container"><img src="img/TempleteBg.jpg" alt="display-image" title="Example"></div>
+                    <div class="text-container">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, at omnis rem reiciendis aperiam repellat?</p>
+                        <h4>Price: <label style="color: orange;">9,999</label></h4>
+                    </div>
+                </div>
+                <!-- End of display-card class here!!! -->
+            </div>
+            <!-- End of item-list class here!!! -->
+           <button style="
+           width: 70px; 
+           height: 70px; 
+           border-radius: 
+           50%; position: 
+           fixed; top: 50%; 
+           right: 0; 
+           background-image: url(img/ScrollUp.png); 
+           background-size: contain; 
+           transform: rotate(180deg);
+           cursor: pointer;
+           " >
+           </button>
+        </div>
+        
+    </div>
+   
+    
+</body>
+</html>
