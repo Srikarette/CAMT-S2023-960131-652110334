@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        body{
+            margin: 0;
+        }
         .playground{
-            height: 100%;      
-            width: 100%;
-            padding: 12px;       
             border: 1px dashed black;     
             background-color: rgb(196, 196, 196); 
-            
+        }
+        .main-content{
+            width: 100%;
+            height: 100%;
+            display:inline-flex;
         }
         .box{
             height: 100px;      
@@ -20,45 +24,107 @@
             border: 1px solid black;     
             background-color: aqua;
             font-size: 28px;
-            display: inline-block;
         }
     </style>
 
     <title>Lab03 - Basic Display</title>
 </head>
 <body>
-    <div  class="playground">
-       <div class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
-       <div style="background-color: green;" class="box"></div>
+    <div style="padding: 12px;" class="playground">
+        <div style="background-color: red; width: 99%; height: 100%;  padding: 10px; text-align: center;" class="box">
+            <div style="background-color: green; width: 99%; height: 100%;  padding: 10px; text-align: center;" class="box">
+                <div style="width: 97%; border: 20px solid orange; text-align: center;" class="box">Content</div>
+             </div>
+        </div>
+        
     </div>
 
+    <div class="main-content">
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display: block; width: 33.3%;" class="playground">
+            <h3>Display:block</h3>
+            <div style="background-color: gold;" class="box"></div>
+            <div style="background-color: red;" class="box"></div>
+        </div>
+  
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display:inline-flex; width: 33.3%;" class="playground">
+            <h3>Display:inline</h3>
+            <div style="background-color: brown;" class="box"></div>
+            <div style="background-color: gold;" class="box"></div>
+            <div style="background-color: green;" class="box"></div>
+            <div style="background-color: red;" class="box"></div>
+        </div>
+      
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display:flex; width: 33.3%;" class="playground">
+            <h3>Display:flex</h3>
+            <div style="background-color: red;" class="box"></div>
+            <div style="background-color: gold;" class="box"></div>
+        </div>
+        
+    </div>
+
+    <div class="main-content">
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display:inline-flex; width: 33.3%;" class="playground">
+            <h3>Display:inline</h3>
+            <div style="background-color: brown;" class="box"></div>
+            <div style="background-color: gold; display: none;" class="box"></div>
+            <div style="background-color: green;" class="box"></div>
+            <div style="background-color: red;" class="box"></div>
+        </div>
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display:inline-flex; width: 33.3%;" class="playground">
+            <h3>Display:inline Vs Visibility: hidden</h3>
+            <div style="background-color: brown;" class="box"></div>
+            <div style="background-color: gold; visibility: hidden;" class="box"></div>
+            <div style="background-color: green;" class="box"></div>
+            <div style="background-color: red;" class="box"></div>
+        </div>
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display:inline-flex; width: 33.3%;" class="playground">
+            <h3>Nothing just opacity</h3>
+            <div style="background-color: brown; opacity: 50%;" class="box"></div>
+        </div>
+    </div>
+
+    <div  class="main-content">
+        <div style="margin:10px auto 0px auto; padding: 10px; display:inline-flex;" class="playground">
+            <h2 style="text-align: center;">Css position</h2>
+        </div>
+    </div>
+    <div  class="main-content">
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display:block; width: 33.3%; position: static;" class="playground">
+            <h3>Position static</h3>
+            <div style="background-color: brown; " class="box"></div>
+        </div>
+    </div>
+
+    <div  class="main-content">
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display:block; width: 33.3%;" class="playground">
+            <h3>Position fixed</h3>
+            <div style="background-color: brown; width: 100%;" class="box">
+                <button style="width: 30px; height: 30px; position: fixed; top: 0px; right: 0px;">x</button>
+            </div>
+        </div>
+    </div>
+ 
+
+    <div  class="main-content">
+        <div style="margin:10px 5px 0px 5px; padding: 10px; display:block; width: 33.3%; position: absolute;" class="playground">
+            <h3>Position absolute: No width/height</h3>
+            <div style="background-color: brown; width: unset; height: unset;" class="box"></div>
+        </div>
+    </div>
+
+    <div  class="main-content">
+        <div style="margin:100px 5px 0px 5px; padding: 10px; position: absolute;" class="playground">
+            <h3>Position static</h3>
+            <div style="background-color: brown; position: absolute;" class="box"></div>
+        </div>
+    </div>
+
+    
+
+    
+
+
+
+   
 </body>
 </html>
