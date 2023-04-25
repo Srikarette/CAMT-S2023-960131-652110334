@@ -28,10 +28,9 @@
         .cookie{
             width: 100%;
             height: 100%;
-            background-color: orange;
+            background-color: grey;
             position: fixed;
             opacity: 50%;
-            top: 0; left: 0;
         }
     </style>
 
@@ -39,8 +38,9 @@
 </head>
 <body>
     <!-- <div class="cookie">
-        <div style="margin: 0 auto;" class="box">
-
+        <div style="top: 20%; left: 40%; position: absolute; width: 550px; height: 450px;text-align: center;" class="box">
+            <h1>Happy songkarn</h1>
+            <p>2066</p>
         </div>
 
     </div> -->
@@ -120,17 +120,19 @@
 
     <div  class="main-content">
         <div style="margin:100px 5px 0px 5px; padding: 10px; position: absolute;" class="playground">
-            <h3>Position static</h3>
+            <h3>Position absolute: width/height</h3>
             <div style="background-color: brown; position: absolute;" class="box"></div>
         </div>
     </div>
 
-    
+    <div  class="main-content">
+        <div style="margin:270px 5px 0px 5px; padding: 10px;" class="playground">
+            <h3>Position abosolute.</h3>
+            <div style="width: 800px; height: 500px; position: relative;" class="box">
+                    <button style="position: absolute; right: -12.5px;top:-12.5px; border-radius: 50%; width: 25px; height: 25px;">x</button>
+            </div>
+        </div>
+    </div>
 
-    
-
-
-
-   
 </body>
 </html>
