@@ -34,6 +34,22 @@
   <h3>playground</h3>
   <div class="playground">
     <style>
+       .menu-container{
+        margin: 5px;
+        width: 5%;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        background-color: white;
+       } 
+      .menu-container .menu-item{
+        border-bottom: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+
+      }
 
     </style>
 
@@ -54,13 +70,23 @@
   <h3>playground</h3>
   <div class="playground">
     <style>
+      .header-container{
+        margin: 5px;
+        padding:0px 15px 0px 15px ;
+        display: inline-flex;
+        border: 1px solid black;
+        align-items: center;
+        justify-content: space-between;
+        width: 550px;
+        height: 50px;
+      }
 
     </style>
 
     <div class="header-container">
-      <div class="header-content-left">Icon here</div>
+      <div class="header-content-left"><img src="/16px/102-undo.png"></div>
       <div class="header-content">Header</div>
-      <div class="header-content-right">Icon here</div>
+      <div class="header-content-right"><img src="/16px/084-calendar.png"></div>
     </div>
   </div>
 
@@ -71,30 +97,47 @@
   <h3>playground</h3>
   <div class="playground">
     <style>
+      .navigation-container{
+        margin: 5px;
+        padding:0px 15px 0px 15px ;
+        display: inline-flex;
+        border: 1px solid black;
+        align-items: center;
+        justify-content: space-between;
+        width: 550px;
+        height: 50px;
+      }
+      .navigation-container .navigation-item{
+        align-items: center;
+      }
+      .navigation-container .navigation-item img{
+        padding-left: 32px;
+      }
+      
 
     </style>
 
     <div class="navigation-container">
       <div class="navigation-item">
-        <div class="navigation-item-icon">icon</div>
+        <div class="navigation-item-icon"><img src="/16px/036-profile.png"></div>
         <div class="navigation-item-label">
           First Menu
         </div>
       </div>
       <div class="navigation-item">
-        <div class="navigation-item-icon">icon</div>
+        <div class="navigation-item-icon"><img src="/16px/017-headphones.png"></div>
         <div class="navigation-item-label">
           Second Menu
         </div>
       </div>
       <div class="navigation-item">
-        <div class="navigation-item-icon">icon</div>
+        <div class="navigation-item-icon"><img src="/16px/001-home.png"></div>
         <div class="navigation-item-label">
           Third Menu
         </div>
       </div>
       <div class="navigation-item">
-        <div class="navigation-item-icon">icon</div>
+        <div class="navigation-item-icon"><img src="/16px/084-calendar.png"></div>
         <div class="navigation-item-label">
           Fourth Menu
         </div>
@@ -109,15 +152,43 @@
   <h3>playground</h3>
   <div class="playground">
     <style>
+      .card-list-container{
+        position: relative;
+        display: inline-block;
+        width: 23%;
+        height: 400px;
+        margin: 10px;
+        padding: 0px 0px 0px 0px;
+        border: 1px solid black;
+        background-color: white;
+      }
+      .card-content-detail-section{
+        text-align: justify;
+        padding: 5px;
+      }
+      .product-price{
+        position: absolute;
+        right: 5px;
+        font-size: larger;
+        font-weight: bold;
+      }
+      .product-name{
+        font-weight: bold;
+      }
+      .card-content-image-section img{
+        width: 100%;
+        height: 300px;
+      }
 
     </style>
 
     <div>
       <div class="card-list-container">
+        <!-- start card display -->
         <div class="card-container">
           <div class="card-content">
             <div class="card-content-image-section">
-              <img src="">
+              <img src="https://picsum.photos/id/237/200/300">
             </div>
             <div class="card-content-detail-section">
               <div class="product-name">
@@ -132,7 +203,125 @@
             </div>
           </div>
         </div>
+        <!-- end of card display -->
       </div>
+
+      <div class="card-list-container">
+        <!-- start card display -->
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of card display -->
+      </div>
+
+      <div class="card-list-container">
+        <!-- start card display -->
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of card display -->
+      </div>
+
+      <div class="card-list-container">
+        <!-- start card display -->
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of card display -->
+      </div>
+
+      <div class="card-list-container">
+        <!-- start card display -->
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of card display -->
+      </div>
+
+      <div class="card-list-container">
+        <!-- start card display -->
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of card display -->
+      </div>
+
+  
       ... duplicated card here
     </div>
   </div>
@@ -144,6 +333,25 @@
   <h3>playground</h3>
   <div class="playground">
     <style>
+      .sidebar-container{
+        margin: 5px;
+        border: 1px solid black;
+        width: 15%;
+        display: block;
+        background-color: white;
+      }
+      .sidebar-profile-section{
+        border-bottom: 1px solid black;
+        font-weight: bold;
+        font-size:larger ;
+      }
+      .sidebar-menu-section{
+        height: 250px;
+      }
+      .sidebar-footer-section{
+        border-top: 1px solid black;
+
+      }
 
     </style>
 
