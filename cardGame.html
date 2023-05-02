@@ -4,13 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="css/CardGame.css" >
-    <title>Card game/title>
+    <link type="text/css" rel="stylesheet" href="css/CardGame.css">
+    <title>Document</title>
 </head>
 <body>
     <div class="content-container">
-        <h1>Hello</h1>
+        <!-- <div class="title">
+            <h1>FUN CARD GAME</h1>
+        </div> -->
+        
+        <div class="card-display">
+        
+            <div class="card-1">
+                <div class="card-suit-top" id="suit-top"></div>
+                <div class="card-number" id="card-number"></div>
+                <div class="card-suit-bottom" id="suit-bottom"></div>
+            </div>
+            <div class="card-2">
+                <div class="card-suit-top" id="suit-top"></div>
+                <div class="card-number" id="card-number"></div>
+                <div class="card-suit-bottom" id="suit-bottom"></div>
+            </div>
+            <div class="card-3">
+                <div class="card-suit-top" id="suit-top"></div>
+                <div class="card-number" id="card-number"></div>
+                <div class="card-suit-bottom" id="suit-bottom"></div>
+            </div>
+            <div class="card-4">
+                <div class="card-suit-top" id="suit-top"></div>
+                <div class="card-number" id="card-number"></div>
+                <div class="card-suit-bottom" id="suit-bottom"></div>
+            </div>
+            <div class="card-5">
+                <div class="card-suit-top" id="suit-top"></div>
+                <div class="card-number" id="card-number"></div>
+                <div class="card-suit-bottom" id="suit-bottom"></div>
+            </div>
+           
+        </div>
+        <div><button  class="draw-button" onclick="drawCard()">Draw Card</button></div>
+           
     </div>
+   
 </body>
+    <script>
+        function drawCard(){
+             // card number and type
+            var CARD_TYPE = ['♣', '♦', '♥', '♠']
+            var CARD_NUMBER = ['A', '1', '2', '3', '4', '5', '6',' 7', '8', '9', '10', 'J', 'Q', 'K']
+            var cards = document.querySelectorAll('.card-display > div');
+           
+
+            // random function
+            // max: number > 0
+            // return [0, max -1]
+            function random(max) {
+            return parseInt(Math.random() * max) % max
+            }
+
+            
+            for (var i = 0; i < cards.length; i++) {
+               
+                // how to use random function
+                var cardType = CARD_TYPE[random(CARD_TYPE.length)];
+                var cardNumber = CARD_NUMBER[random(CARD_NUMBER.length)];
+                // console.log(cardType, cardNumber)
+
+                if (cardType === '♦' || cardType === '♥') {
+                cards[i].querySelector('.card-suit-top').style.color = 'red';
+                cards[i].querySelector('.card-suit-bottom').style.color = 'red';
+                cards[i].querySelector('.card-number').style.color = 'red';
+                } else {
+                cards[i].querySelector('.card-suit-top').style.color = 'black';
+                cards[i].querySelector('.card-suit-bottom').style.color = 'black';
+                cards[i].querySelector('.card-number').style.color = 'black';
+                }
+
+                // set the suit and number for each card
+                cards[i].querySelector('#suit-top').innerHTML = cardType;
+                cards[i].querySelector('#suit-bottom').innerHTML = cardType;
+                cards[i].querySelector('#card-number').innerHTML = cardNumber;
+            }
+        }
+
+        
+    </script>
 </html>
