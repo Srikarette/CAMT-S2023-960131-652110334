@@ -10,7 +10,7 @@
 <body>
     <div class="board">
         <div class="board-content">
-          <div class="card-zone" id="test">
+          <div class="card-zone">
             <!-- something to do next -->
 
 
@@ -83,7 +83,6 @@
     function renderCardList() {
     // TODO: define cardZoneElm here
     const cardZoneElm = document.getElementsByClassName('card-zone');
-    document.getElementById('test').innerHTML = "";
     // before append any DOM(s), you need to clear all children of cardZoneElm
 
 	for (var idx=0; idx < cardList.length; idx++) {
