@@ -83,6 +83,8 @@
     function renderCardList() {
     // TODO: define cardZoneElm here
     const cardZoneElm = document.getElementsByClassName('card-zone');
+    cardZoneElm[0].innerHTML="";
+    console.log(cardZoneElm);
     // before append any DOM(s), you need to clear all children of cardZoneElm
 
 	for (var idx=0; idx < cardList.length; idx++) {
