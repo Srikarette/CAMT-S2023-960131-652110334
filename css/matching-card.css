@@ -1,0 +1,94 @@
+.board{
+    background-color: green;
+    border-radius: 10px;
+    width: 100%;
+}
+.board-content{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 100%;
+  
+}
+.card-zone{
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1500px;
+}
+
+.card{
+    width: 150px;
+    height: 225px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px 0px 0px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.card-face-down{
+    width: 150px;
+    height: 225px;
+    background-color: gray;
+    border: 3px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px 0px 0px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.card-face-down .card-body{
+    margin-top: 60%;
+    text-align: center;
+    flex-grow: 1;
+    color: white;
+}
+.card .card-body{
+    margin-top: 40%;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.card-title{
+    text-align: right;
+    padding: 5px 5px 0px 0px;
+}
+
+.player-zone{
+    margin: 0px 0px 0px 15px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    /* background-color: aqua; */
+
+}
+.player-player-a{
+    border-left: 3px solid black;
+    height: 50%;
+}
+.player-player-b{
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+    height: 50%;
+}
+.player-score{
+    margin-top: 50%;
+    font-size: 60px;
+}
+.footer .new-game-button{
+    width: 100%;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 1px 0px 0px 0px;
+    bottom: 0px;
+}
