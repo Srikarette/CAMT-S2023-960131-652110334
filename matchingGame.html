@@ -126,12 +126,12 @@
 	  for (var idx=0; idx < cardList.length; idx++) {
 		// TODO:
 		// if isFaceDown is true, create a card component with 'face-down' class
-
         if (random(2) === 0) { // randomly set isFaceDown to true or false
           cardList[idx].isFaceDown = true;
         } else {
           cardList[idx].isFaceDown = false;
         }
+
       // console.log(cardType,cardNumber);
         if(cardList[idx].isFaceDown==true){
             cardElm = htmlToElem(
@@ -151,8 +151,6 @@
 		cardZoneElm[0].append(cardElm)
      }
     }
-    console.log("Click!")
-
     window.onload(renderCardList());
 </script>
 </html>
