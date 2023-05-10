@@ -44,35 +44,72 @@
 </body>
 
 <script>
-    
+    var CARD_TYPE = ['♣', '♦', '♥', '♠']
+    var CARD_NUMBER = ['A', '2', '3', '4', '5', '6',' 7', '8', '9', '10', 'J', 'Q', 'K']
+            
+    // random function
+    // max: number > 0
+    // return [0, max -1]
+    function random(max) {
+    return parseInt(Math.random() * max) % max
+    }
+
+
     var cardList = [
-                    { value: ['♣', 'A'], isFaceDown: true },
-                    { value: ['♣', '2'], isFaceDown: false },
-                    { value: ['♣', '3'], isFaceDown: true },
-                    { value: ['♣', '4'], isFaceDown: false },
-                    { value: ['♣', '5'], isFaceDown: true },
-                    { value: ['♣', '6'], isFaceDown: true },
-                    { value: ['♣', '7'], isFaceDown: true },
-                    { value: ['♣', '8'], isFaceDown: false },
-                    { value: ['♣', '9'], isFaceDown: true },
-                    { value: ['♣', '10'], isFaceDown: true },
-                    { value: ['♣', 'J'], isFaceDown: true },
-                    { value: ['♣', 'Q'], isFaceDown: true },
-                    { value: ['♣', 'K'], isFaceDown: false },
-                    { value: ['♥', 'A'], isFaceDown: true },
-                    { value: ['♥', '2'], isFaceDown: true },
-                    { value: ['♥', '3'], isFaceDown: false },
-                    { value: ['♥', '4'], isFaceDown: false },
-                    { value: ['♥', '5'], isFaceDown: true },
-                    { value: ['♥', '6'], isFaceDown: false },
-                    { value: ['♥', '7'], isFaceDown: true },
-                    { value: ['♥', '8'], isFaceDown: true },
-                    { value: ['♥', '9'], isFaceDown: true },
-                    { value: ['♥', '10'], isFaceDown: true },
-                    { value: ['♥', 'J'], isFaceDown: true },
-                    { value: ['♥', 'Q'], isFaceDown: true },
-                    { value: ['♥', 'K'], isFaceDown: false },
-                    ]
+                  { value: ['♣', 'A'], isFaceDown: true },
+                  { value: ['♣', '2'], isFaceDown: false },
+                  { value: ['♣', '3'], isFaceDown: true },
+                  { value: ['♣', '4'], isFaceDown: false },
+                  { value: ['♣', '5'], isFaceDown: true },
+                  { value: ['♣', '6'], isFaceDown: true },
+                  { value: ['♣', '7'], isFaceDown: true },
+                  { value: ['♣', '8'], isFaceDown: false },
+                  { value: ['♣', '9'], isFaceDown: true },
+                  { value: ['♣', '10'], isFaceDown: true },
+                  { value: ['♣', 'J'], isFaceDown: true },
+                  { value: ['♣', 'Q'], isFaceDown: true },
+                  { value: ['♣', 'K'], isFaceDown: false },
+                  { value: ['♥', 'A'], isFaceDown: true },
+                  { value: ['♥', '2'], isFaceDown: true },
+                  { value: ['♥', '3'], isFaceDown: false },
+                  { value: ['♥', '4'], isFaceDown: false },
+                  { value: ['♥', '5'], isFaceDown: true },
+                  { value: ['♥', '6'], isFaceDown: false },
+                  { value: ['♥', '7'], isFaceDown: true },
+                  { value: ['♥', '8'], isFaceDown: true },
+                  { value: ['♥', '9'], isFaceDown: true },
+                  { value: ['♥', '10'], isFaceDown: true },
+                  { value: ['♥', 'J'], isFaceDown: true },
+                  { value: ['♥', 'Q'], isFaceDown: true },
+                  { value: ['♥', 'K'], isFaceDown: false },
+                  { value: ['♣', 'A'], isFaceDown: true },
+                  { value: ['♣', '2'], isFaceDown: false },
+                  { value: ['♣', '3'], isFaceDown: true },
+                  { value: ['♣', '4'], isFaceDown: false },
+                  { value: ['♣', '5'], isFaceDown: true },
+                  { value: ['♣', '6'], isFaceDown: true },
+                  { value: ['♣', '7'], isFaceDown: true },
+                  { value: ['♣', '8'], isFaceDown: false },
+                  { value: ['♣', '9'], isFaceDown: true },
+                  { value: ['♣', '10'], isFaceDown: true },
+                  { value: ['♣', 'J'], isFaceDown: true },
+                  { value: ['♣', 'Q'], isFaceDown: true },
+                  { value: ['♣', 'K'], isFaceDown: false },
+                  { value: ['♥', 'A'], isFaceDown: true },
+                  { value: ['♥', '2'], isFaceDown: true },
+                  { value: ['♥', '3'], isFaceDown: false },
+                  { value: ['♥', '4'], isFaceDown: false },
+                  { value: ['♥', '5'], isFaceDown: true },
+                  { value: ['♥', '6'], isFaceDown: false },
+                  { value: ['♥', '7'], isFaceDown: true },
+                  { value: ['♥', '8'], isFaceDown: true },
+                  { value: ['♥', '9'], isFaceDown: true },
+                  { value: ['♥', '10'], isFaceDown: true },
+                  { value: ['♥', 'J'], isFaceDown: true },
+                  { value: ['♥', 'Q'], isFaceDown: true },
+                  { value: ['♥', 'K'], isFaceDown: false },
+                ]
+
     function htmlToElem(html) {
     let temp = document.createElement('template');
     html = html.trim(); // Never return a space text node as a result
@@ -84,19 +121,27 @@
     // TODO: define cardZoneElm here
     const cardZoneElm = document.getElementsByClassName('card-zone');
     cardZoneElm[0].innerHTML="";
-    console.log(cardZoneElm);
     // before append any DOM(s), you need to clear all children of cardZoneElm
 
-	for (var idx=0; idx < cardList.length; idx++) {
+	  for (var idx=0; idx < cardList.length; idx++) {
 		// TODO:
 		// if isFaceDown is true, create a card component with 'face-down' class
-        if(cardList[idx].isFaceDown===true){
+
+        if (random(2) === 0) { // randomly set isFaceDown to true or false
+          cardList[idx].isFaceDown = true;
+        } else {
+          cardList[idx].isFaceDown = false;
+        }
+      // console.log(cardType,cardNumber);
+        if(cardList[idx].isFaceDown==true){
             cardElm = htmlToElem(
             '<div class="card-face-down"><div class="card-title"></div><div class="card-body">?</div></div>'
 		    );
         }else{
+            var cardType = CARD_TYPE[random(CARD_TYPE.length)];
+            var cardNumber = CARD_NUMBER[random(CARD_NUMBER.length)];
             cardElm = htmlToElem(
-            '<div class="card"> <div class="card-title"> '+ cardList[idx].value[0]+' </div> <div class="card-body"> '+cardList[idx].value[1]+' </div> </div>'
+              '<div class="card"> <div class="card-title"> '+ cardType+' </div> <div class="card-body"> '+cardNumber+' </div> </div>'
 		    );
             if(cardList[idx].value[0]=="♥" ||cardList[idx].value[0]=="♦" ){
             cardElm.style.color="red"
