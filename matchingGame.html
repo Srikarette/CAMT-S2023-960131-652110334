@@ -69,14 +69,23 @@
     function renderCardList() {
     // TODO: define cardZoneElm here
     const cardZoneElm = document.getElementsByClassName('card-zone');
-    cardZoneElm[0].innerHTML="";
     // before append any DOM(s), you need to clear all children of cardZoneElm
+    cardZoneElm[0].innerHTML="";
+
+    const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+    const buttons = document.querySelectorAll("button");
+
+    buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        audio.play();
+      });
+    });
 
     shuffle(cardList);
 	  for (var idx=0; idx < cardList.length; idx++) {
 		// TODO:
 		// if isFaceDown is true, create a card component with 'face-down' class
-        if (random(2) === 0) { // randomly set isFaceDown to true or false
+        if (random(2)==0) { // randomly set isFaceDown to true or false
           cardElm = htmlToElem(
             '<div class="card-face-down"><div class="card-title"></div><div class="card-body">?</div></div>'
 		      );
@@ -101,10 +110,12 @@
       let x = 0;
       for(type of CARD_TYPE){
         for(num of CARD_NUMBER){
-          cardList[x] = new Array(2);
+          cardList[x] = new Array(4);
           cardList[x][0] = type;
           cardList[x][1] = num;
-          // console.log(cardList[x]);
+          cardList[x][2]=[true];
+          cardList[x][3]= x+1;
+          console.log(cardList[x]);
           x++;
         }
       }
