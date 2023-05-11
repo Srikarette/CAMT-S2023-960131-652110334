@@ -1,0 +1,28 @@
+.board {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .cell {
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+  }
+  
+  .empty {
+    background-color: white;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
