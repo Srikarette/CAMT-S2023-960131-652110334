@@ -43,72 +43,14 @@
     
 </body>
 
-<script>
-    var CARD_TYPE = ['♣', '♦', '♥', '♠']
-    var CARD_NUMBER = ['A', '2', '3', '4', '5', '6',' 7', '8', '9', '10', 'J', 'Q', 'K']
-            
+<script>   
+  
     // random function
     // max: number > 0
     // return [0, max -1]
     function random(max) {
     return parseInt(Math.random() * max) % max
     }
-
-
-    var cardList = [
-                  { value: ['♣', 'A'], isFaceDown: true },
-                  { value: ['♣', '2'], isFaceDown: false },
-                  { value: ['♣', '3'], isFaceDown: true },
-                  { value: ['♣', '4'], isFaceDown: false },
-                  { value: ['♣', '5'], isFaceDown: true },
-                  { value: ['♣', '6'], isFaceDown: true },
-                  { value: ['♣', '7'], isFaceDown: true },
-                  { value: ['♣', '8'], isFaceDown: false },
-                  { value: ['♣', '9'], isFaceDown: true },
-                  { value: ['♣', '10'], isFaceDown: true },
-                  { value: ['♣', 'J'], isFaceDown: true },
-                  { value: ['♣', 'Q'], isFaceDown: true },
-                  { value: ['♣', 'K'], isFaceDown: false },
-                  { value: ['♥', 'A'], isFaceDown: true },
-                  { value: ['♥', '2'], isFaceDown: true },
-                  { value: ['♥', '3'], isFaceDown: false },
-                  { value: ['♥', '4'], isFaceDown: false },
-                  { value: ['♥', '5'], isFaceDown: true },
-                  { value: ['♥', '6'], isFaceDown: false },
-                  { value: ['♥', '7'], isFaceDown: true },
-                  { value: ['♥', '8'], isFaceDown: true },
-                  { value: ['♥', '9'], isFaceDown: true },
-                  { value: ['♥', '10'], isFaceDown: true },
-                  { value: ['♥', 'J'], isFaceDown: true },
-                  { value: ['♥', 'Q'], isFaceDown: true },
-                  { value: ['♥', 'K'], isFaceDown: false },
-                  { value: ['♣', 'A'], isFaceDown: true },
-                  { value: ['♣', '2'], isFaceDown: false },
-                  { value: ['♣', '3'], isFaceDown: true },
-                  { value: ['♣', '4'], isFaceDown: false },
-                  { value: ['♣', '5'], isFaceDown: true },
-                  { value: ['♣', '6'], isFaceDown: true },
-                  { value: ['♣', '7'], isFaceDown: true },
-                  { value: ['♣', '8'], isFaceDown: false },
-                  { value: ['♣', '9'], isFaceDown: true },
-                  { value: ['♣', '10'], isFaceDown: true },
-                  { value: ['♣', 'J'], isFaceDown: true },
-                  { value: ['♣', 'Q'], isFaceDown: true },
-                  { value: ['♣', 'K'], isFaceDown: false },
-                  { value: ['♥', 'A'], isFaceDown: true },
-                  { value: ['♥', '2'], isFaceDown: true },
-                  { value: ['♥', '3'], isFaceDown: false },
-                  { value: ['♥', '4'], isFaceDown: false },
-                  { value: ['♥', '5'], isFaceDown: true },
-                  { value: ['♥', '6'], isFaceDown: false },
-                  { value: ['♥', '7'], isFaceDown: true },
-                  { value: ['♥', '8'], isFaceDown: true },
-                  { value: ['♥', '9'], isFaceDown: true },
-                  { value: ['♥', '10'], isFaceDown: true },
-                  { value: ['♥', 'J'], isFaceDown: true },
-                  { value: ['♥', 'Q'], isFaceDown: true },
-                  { value: ['♥', 'K'], isFaceDown: false },
-                ]
 
     function htmlToElem(html) {
     let temp = document.createElement('template');
@@ -117,40 +59,58 @@
     return temp.content.firstChild;
     }
 
+    function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
     function renderCardList() {
     // TODO: define cardZoneElm here
     const cardZoneElm = document.getElementsByClassName('card-zone');
     cardZoneElm[0].innerHTML="";
     // before append any DOM(s), you need to clear all children of cardZoneElm
 
+    shuffle(cardList);
 	  for (var idx=0; idx < cardList.length; idx++) {
 		// TODO:
 		// if isFaceDown is true, create a card component with 'face-down' class
         if (random(2) === 0) { // randomly set isFaceDown to true or false
-          cardList[idx].isFaceDown = true;
-        } else {
-          cardList[idx].isFaceDown = false;
-        }
-
-      // console.log(cardType,cardNumber);
-        if(cardList[idx].isFaceDown==true){
-            cardElm = htmlToElem(
+          cardElm = htmlToElem(
             '<div class="card-face-down"><div class="card-title"></div><div class="card-body">?</div></div>'
-		    );
-        }else{
-            var cardType = CARD_TYPE[random(CARD_TYPE.length)];
-            var cardNumber = CARD_NUMBER[random(CARD_NUMBER.length)];
-            cardElm = htmlToElem(
-              '<div class="card"> <div class="card-title"> '+ cardType+' </div> <div class="card-body"> '+cardNumber+' </div> </div>'
-		    );
-            if(cardList[idx].value[0]=="♥" ||cardList[idx].value[0]=="♦" ){
+		      );
+        } else {
+          cardElm = htmlToElem(
+              '<div class="card"> <div class="card-title"> '+cardList[idx][0]+' </div> <div class="card-body"> '+cardList[idx][1]+' </div> </div>'
+		      );
+            if(cardList[idx][0]=="♥" ||cardList[idx][0]=="♦" ){
             cardElm.style.color="red"
             cardElm.style.border="3px solid red"
          }
-        }
-		cardZoneElm[0].append(cardElm)
+        }  
+        cardZoneElm[0].append(cardElm)
+      }
      }
-    }
-    window.onload(renderCardList());
+    var CARD_TYPE = ['♣', '♦','♠','♥'];
+    var CARD_NUMBER = ['A', '2', '3', '4', '5', '6',' 7', '8', '9', '10', 'J', 'Q', 'K'];
+    var cardList=new Array(52);
+
+    window.onload = function(){
+
+      let x = 0;
+      for(type of CARD_TYPE){
+        for(num of CARD_NUMBER){
+          cardList[x] = new Array(2);
+          cardList[x][0] = type;
+          cardList[x][1] = num;
+          // console.log(cardList[x]);
+          x++;
+        }
+      }
+      renderCardList();
+    };
+      
+      
 </script>
 </html>
