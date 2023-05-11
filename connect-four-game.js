@@ -84,11 +84,13 @@ cells.forEach(cell => {
     if (checkWin()) {
       message.textContent = `${currentPlayer.toUpperCase()} wins!`;
       resetButton.disabled = false;
-    } else {
+    } 
+    else {
       currentPlayer = (currentPlayer === 'red') ? 'yellow' : 'red';
     }
   });
 });
+
 
 // Add event listener to reset button
 resetButton.addEventListener('click', e => {
